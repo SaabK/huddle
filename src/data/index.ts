@@ -29,7 +29,7 @@ export const features = [
     image: flowingConversations,
     title: "Flowing Conversations",
     description:
-      "You wouldn't paginate a conversation in real life, so why do it online?",
+      "You wouldn't paginate a conversation in real life, so why do it online? Our threads have just-in-time loading for a more natural flow.",
   },
   {
     image: yourUsers,

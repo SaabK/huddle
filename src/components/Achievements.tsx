@@ -4,9 +4,9 @@ function Achievements() {
   return (
     <section id="achievements" className="container">
       {achievements.map((achievement, index) => (
-        <div key={index}>
+        <div key={index} className="achievement">
           <img src={achievement.icon} alt={achievement.title} />
-          <span>{achievement.numbers}</span>
+          <span className="numbers">{achievement.numbers}</span>
           <p>{achievement.title}</p>
         </div>
       ))}
