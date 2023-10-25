@@ -155,6 +155,12 @@ header {
       text-align: center;
     }
   }
+
+  img {
+    width: 100%;
+    max-width: 768px;
+    margin-inline: auto;
+  }
 }
 
 // Achievements
@@ -202,57 +208,11 @@ header {
     background: $neutral-very-pale-blue;
   }
 
-  &:nth-of-type(1):before {
-    content: "";
-    position: absolute;
-    top: -100px;
-    left: 0;
-    background: url("./assets/images/bg-section-top-mobile-1.svg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    width: 100%;
-    max-width: 100%;
-    height: 100px;
-  }
-
-  &:nth-of-type(1):after {
-    content: "";
-    position: absolute;
-    bottom: -200px;
-    background: url("./assets/images/bg-section-bottom-mobile-1.svg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    width: 100%;
-    height: 200px;
-  }
-
-  &:nth-of-type(3):before {
-    content: "";
-    position: absolute;
-    top: -100px;
-    left: 0;
-    background: url("./assets/images/bg-section-top-mobile-2.svg");
-    background-repeat: no-repeat;
-    width: 100%;
-    background-size: 100%;
-    height: 100px;
-  }
-
-  &:nth-of-type(3):after {
-    content: "";
-    position: absolute;
-    bottom: -200px;
-    background: url("./assets/images/bg-section-bottom-mobile-2.svg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    width: 100%;
-    height: 200px;
-  }
-
   .container {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
     gap: 3.5rem;
   }
 
@@ -271,6 +231,7 @@ header {
 
   img {
     max-width: 17.5rem;
+    margin-inline: auto;
   }
 }
 
@@ -294,6 +255,11 @@ footer {
   background: $neutral-very-dark-cyan;
   color: white;
   padding-block: $section-padding * 0.5;
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
 }
 
 .newsletter {
@@ -346,7 +312,6 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding-block-start: 3rem;
 
   .logo {
     height: 1.35rem;
@@ -380,6 +345,122 @@ footer {
         font-size: 0.675rem;
         opacity: 0.95;
         color: $neutral-very-pale-blue;
+      }
+    }
+  }
+}
+
+@media (min-width: 580px) {
+  .container {
+    max-width: 1280px;
+    padding-inline: 6rem;
+  }
+
+  h1 {
+    font-size: 2.85rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    font-size: 0.85rem;
+  }
+
+  // Navbar
+
+  .logo {
+    height: 1.5rem;
+  }
+
+  // Hero
+
+  #hero {
+    .text-content {
+      p {
+        width: 70%;
+      }
+    }
+  }
+
+  // Achievements
+
+  #achievements {
+    grid-template-columns: repeat(2, 1fr);
+    padding-inline: 10rem;
+
+    .achievement {
+      img {
+        width: 2rem;
+      }
+
+      .numbers {
+        font-size: 3rem;
+      }
+
+      p {
+        font-size: 0.925rem;
+      }
+    }
+  }
+
+  // Features
+
+  #features {
+    padding-block-end: 0;
+  }
+
+  .feature {
+    .container {
+      flex-direction: row;
+    }
+
+    &:nth-of-type(2n + 1) {
+      .text-content {
+        order: 0;
+      }
+    }
+
+    &:nth-of-type(2n) {
+      .text-content {
+        align-items: end;
+      }
+    }
+
+    .text-content {
+      align-items: start;
+      & > * {
+        text-align: left;
+        width: 75%;
+      }
+    }
+
+    img {
+      max-width: 22rem;
+    }
+  }
+
+  // Footer
+
+  footer {
+    .container {
+      flex-direction: row;
+      gap: 15rem;
+    }
+  }
+  .newsletter {
+    order: 2;
+
+    form {
+      flex-direction: row;
+
+      button {
+        font-size: 0.6rem;
       }
     }
   }
